@@ -2,13 +2,13 @@ function solution(board) {
     
     
     var answer = 0;
-    const m = board.length;
-    const n = board[0].length;
+    const n = board.length;
+    const m = board[0].length;
     const start = [];
     const goal = [];
     const stack = [];
     let count =1;
-    const visited = Array.from(Array(m), () => Array(n).fill(false))
+    const visited = Array.from(Array(n), () => Array(m).fill(false))
     
     
     const move = [[1,0],[-1,0],[0,1],[0,-1]]
@@ -27,10 +27,6 @@ function solution(board) {
             
             start.push(idx,horse.indexOf('R'))
             
-        }
-        if(horse.includes('G')){
-            
-             goal.push(idx,horse.indexOf('G'))
         }
     })
     
@@ -60,8 +56,8 @@ for(let i=0; i<4;i){
             while(moveX >= 0 &&
                   moveY  >= 0 && 
                   
-                  moveX < m && 
-                  moveY< n &&
+                  moveX < n && 
+                  moveY< m &&
                   board[moveX][moveY]!=='D'){
                 
           // return
@@ -99,7 +95,7 @@ for(let i=0; i<4;i){
   
           return answer;                          
  
-}      
+
 
 
 
@@ -166,7 +162,7 @@ for(let i=0; i<4;i){
 
         
         
-    // }
+    }
     // console.log(start)
     
 function canMove(x, y, dx, dy, board) {
