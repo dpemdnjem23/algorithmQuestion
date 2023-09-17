@@ -38,7 +38,6 @@ function solution(weights) {
         }
         //비율 3/2
         if(weightObj[weight*3/2]>0){
-               
             answer+=weightObj[weight*3/2]
         }
         //비율이 2
@@ -54,7 +53,6 @@ function solution(weights) {
         weightObj[weight]-=1
     })
     
-    console.log(weights)
         return answer;
 
 }
